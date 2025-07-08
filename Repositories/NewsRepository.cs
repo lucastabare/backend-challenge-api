@@ -14,8 +14,25 @@ public class NewsRepository : INewsRepository
         _context = context;
     }
 
-    public async Task<IEnumerable<News>> GetAllAsync() =>
-        await _context.News.OrderByDescending(n => n.Date).ToListAsync();
+    public async Task<IEnumerable<News>> GetAllAsync(string? query)
+    {
+        var newsQuery = _context.News.AsQueryable();
+
+        if (!string.IsNullOrWhiteSpace(query))
+        {
+            var normalizedQuery = query.Trim().ToLower();
+
+            newsQuery = newsQuery.Where(n =>
+                n.Title.ToLower().Contains(normalizedQuery) ||
+                n.Author.ToLower().Contains(normalizedQuery) ||
+                n.Body.ToLower().Contains(normalizedQuery)
+            );
+        }
+
+        return await newsQuery
+            .OrderByDescending(n => n.Date)
+            .ToListAsync();
+    }
 
     public async Task<News?> GetByIdAsync(int id) =>
         await _context.News.FindAsync(id);
@@ -27,6 +44,7 @@ public class NewsRepository : INewsRepository
 
     public async Task AddAsync(News news)
     {
+        Console.WriteLine($"News => {System.Text.Json.JsonSerializer.Serialize(news)}");
         _context.News.Add(news);
         await _context.SaveChangesAsync();
     }

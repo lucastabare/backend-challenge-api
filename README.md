@@ -41,7 +41,6 @@ API RESTful desarrollada en **.NET 6** para la gestión de noticias. Implementa 
 │ ├── NewsViewModel.cs
 │ ├── PaginationViewModel.cs
 │ └── Filters/
-│ ├── NewsFilterViewModel.cs
 │ └── PaginationFilterViewModel.cs
 ├── appsettings.json
 ├── Dockerfile

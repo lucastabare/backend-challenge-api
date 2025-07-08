@@ -67,7 +67,7 @@ public class NewsService : INewsService, IPaginatedService<News, NewsViewModel>
 
     public async Task<PaginationViewModel<NewsViewModel>> GetPaginatedAsync(PaginationFilterViewModel filter)
     {
-        var query = await _repository.GetAllAsync();
+        var query = await _repository.GetAllAsync(filter.Query);
 
         var totalItems = query.Count();
         var totalPages = (int)Math.Ceiling(totalItems / (double)filter.PageSize);
@@ -93,6 +93,8 @@ public class NewsService : INewsService, IPaginatedService<News, NewsViewModel>
         Id = n.Id,
         Title = n.Title,
         Author = n.Author,
-        Date = n.Date
+        Date = n.Date,
+        ImageUrl = n.ImageUrl,
+        Body= n.Body,
     };
 }

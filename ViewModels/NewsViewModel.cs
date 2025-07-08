@@ -7,4 +7,5 @@ public class NewsViewModel
     public string Author { get; set; } = null!;
     public DateTime Date { get; set; }
     public string ImageUrl {get; set;}
+    public string Body {get; set; }
 }
