@@ -38,8 +38,6 @@ public class NewsService : INewsService, IPaginatedService<News, NewsViewModel>
 
     public async Task<bool> UpdateAsync(int id, NewsPutViewModel model)
     {
-        if (id != model.Id) return false;
-
         var existing = await _repository.GetByIdAsync(id);
         if (existing is null) return false;
 

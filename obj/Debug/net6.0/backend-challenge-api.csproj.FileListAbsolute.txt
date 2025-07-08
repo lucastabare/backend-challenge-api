@@ -40,3 +40,4 @@ C:\Users\lucas\OneDrive\Escritorio\backend-challenge-api\obj\Debug\net6.0\refint
 C:\Users\lucas\OneDrive\Escritorio\backend-challenge-api\obj\Debug\net6.0\backend-challenge-api.pdb
 C:\Users\lucas\OneDrive\Escritorio\backend-challenge-api\obj\Debug\net6.0\backend-challenge-api.genruntimeconfig.cache
 C:\Users\lucas\OneDrive\Escritorio\backend-challenge-api\obj\Debug\net6.0\ref\backend-challenge-api.dll
+C:\Users\lucas\OneDrive\Escritorio\backend-challenge-api\obj\Debug\net6.0\backend-challenge-api.sourcelink.json

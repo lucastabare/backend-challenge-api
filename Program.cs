@@ -21,11 +21,26 @@ builder.Services.AddScoped<INewsRepository, NewsRepository>();
 builder.Services.AddScoped<INewsService, NewsService>();
 builder.Services.AddScoped<IPaginatedService<News, NewsViewModel>, NewsService>();
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowLocalhost3000", policy =>
+    {
+        policy.WithOrigins("*") 
+              .AllowAnyHeader()
+              .AllowAnyMethod();
+    });
+});
+
 var app = builder.Build();
+
+app.UseCors("AllowLocalhost3000");
 
 app.UseSwagger();
 app.UseSwaggerUI();
+
 app.UseHttpsRedirection();
 app.UseAuthorization();
+
 app.MapControllers();
+
 app.Run();
