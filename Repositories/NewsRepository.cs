@@ -44,7 +44,6 @@ public class NewsRepository : INewsRepository
 
     public async Task AddAsync(News news)
     {
-        Console.WriteLine($"News => {System.Text.Json.JsonSerializer.Serialize(news)}");
         _context.News.Add(news);
         await _context.SaveChangesAsync();
     }
