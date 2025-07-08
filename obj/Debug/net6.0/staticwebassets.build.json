@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "n194FNUvGmPm0PvVJFAnCcUbtzZAJ1QJliGzyIX5pw0=",
+  "Source": "backend-challenge-api",
+  "BasePath": "_content/backend-challenge-api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
